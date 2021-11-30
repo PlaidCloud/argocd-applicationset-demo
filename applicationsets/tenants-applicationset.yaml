@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: tenants
+  name: plaidcloud-workspaces
 spec:
   generators:
     - git:
