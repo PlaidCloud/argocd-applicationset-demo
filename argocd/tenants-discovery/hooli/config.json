@@ -7,6 +7,6 @@
   "k8s_cluster": {
     "owner": "admin@company.com",
     "address": "https://kubernetes.default.svc",
-    "namespace": "argocd"
+    "namespace": "pw-hooli"
   }
 }
