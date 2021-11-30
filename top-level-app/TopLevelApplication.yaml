@@ -9,7 +9,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   # The project the application belongs to.
-  project: io-plaid-tenants
+  project: io
   source:
     repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
     targetRevision: argocd-applicationsets
