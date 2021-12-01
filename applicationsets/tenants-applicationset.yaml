@@ -13,7 +13,7 @@ spec:
     metadata:
       name: '{{tenant.id}}'
     spec:
-      project: io
+      project: default
       source:
         repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
         targetRevision: main
