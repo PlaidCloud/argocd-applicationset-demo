@@ -10,7 +10,7 @@ Argo CD Applications with [ApplicationSet Controller](https://argocd-application
 1. Kubernetes cluster with `argocd` namespace.
 2. Argo CD helm chart repo installed `helm repo add argo https://argoproj.github.io/argo-helm`
 3. Argo CD deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-demo argo/argo-cd -n argocd`
-4. Argo CD ApplicationSet Controller deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-appset-demo argo/argocd-applicationset -n argocd`
+4. Argo CD ApplicationSet Controller deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-appset-demo2 argo/argocd-applicationset -n argocd`
 
 ### Deploy Top-Level Application
 
