@@ -19,9 +19,9 @@ metadata:
 spec:
   tls:
   - hosts:
-    - hooli.plaidcloud.io
+    - newhooli.plaidcloud.io
   rules:
-  - host: hooli.plaidcloud.io
+  - host: newhooli.plaidcloud.io
     http:
       paths:
       - backend:
