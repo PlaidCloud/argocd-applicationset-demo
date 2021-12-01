@@ -17,3 +17,7 @@ wordpress:
   ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
   ##
   wordpressBlogName: Hooli's Blog!
+
+service:
+  type: ClusterIP
+  port: 80
