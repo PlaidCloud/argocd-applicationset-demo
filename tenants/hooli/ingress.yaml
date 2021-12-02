@@ -16,14 +16,22 @@ spec:
   - host: hooli.plaidcloud.io
     http:
       paths:
-      - backend:
-          serviceName: hooli-wordpress
-          servicePort: 80
+      - pathType: Prefix
         path: /
+        backend:
+          service:
+            name: hooli-wordpress
+            port:
+              number: 80
+        
   - host: superset.hooli.plaidcloud.io
     http:
       paths:
-      - backend:
-          serviceName: superset
-          servicePort: 9000
+      - pathType: Prefix
         path: /
+        backend:
+          service:
+            name: hooli-superset
+            port:
+              number: 9000
+        
