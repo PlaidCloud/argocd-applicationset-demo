@@ -18,6 +18,8 @@ wordpress:
   ##
   wordpressBlogName: ECorp's Blog!
 
+  fullnameOverride: the-website
+
   service:
     type: ClusterIP
     port: 80
