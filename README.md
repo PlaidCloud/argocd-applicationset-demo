@@ -10,13 +10,22 @@ Argo CD Applications with [ApplicationSet Controller](https://argocd-application
 1. Kubernetes cluster with `argocd` namespace.
 2. Argo CD helm chart repo installed `helm repo add argo https://argoproj.github.io/argo-helm`
 3. Argo CD deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-demo argo/argo-cd -n argocd`
-4. Argo CD ApplicationSet Controller deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-appset-demo2 argo/argocd-applicationset -n argocd`
+
+### Deploying An ApplicationSet for IO
+1. Argo CD ApplicationSet Controller deployed in `argocd` namespace. Quick deploy: `helm upgrade --install io-tenant-appset argo/argocd-applicationset -n argocd`
+
+### Deploying An ApplicationSet for Production
+1. Argo CD ApplicationSet Controller deployed in `argocd` namespace. Quick deploy: `helm upgrade --install prod-tenant-appset argo/argocd-applicationset -n argocd`
 
 ### Deploy Top-Level Application
 
 Clone the repository and run below command in root of the repository. 
 This will deploy an Application which will deploy the ApplicationSet 
 resource which will end up deploying two "tenant" Applications.
+
+This will need to be run for each ApplicationSet environment you want to operate.
+ - io-tenants
+ - prod-tenants
 
 ```shell
 kubectl apply -f top-level-app/TopLevelApplication.yaml -n argocd
