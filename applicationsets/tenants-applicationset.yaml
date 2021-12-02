@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: tenants
+  name: io-tenants
 spec:
   generators:
     - git:
         repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
-        revision: main
+        revision: io-tenants
         files:
           - path: "argocd/tenants-discovery/**/config.json"
   template:
@@ -16,7 +16,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
-        targetRevision: main
+        targetRevision: io-tenants
         path: 'tenants/{{tenant.id}}'
         helm:
           valueFiles:
