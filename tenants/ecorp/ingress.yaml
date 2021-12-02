@@ -9,11 +9,14 @@ spec:
   tls:
   - hosts:
     - ecorp.plaidcloud.io
+    - app.ecorp.plaidcloud.io
+    - superset.ecorp.plaidcloud.io
+    secretName: ssl-cert
   rules:
   - host: ecorp.plaidcloud.io
     http:
       paths:
       - backend:
-          serviceName: wordpress
+          serviceName: ecorp-wordpress
           servicePort: 80
         path: /

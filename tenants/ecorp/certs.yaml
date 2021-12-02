@@ -1,0 +1,35 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ssl-cert
+  namespace: pw-ecorp
+spec:
+  secretName: ssl-cert
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  subject:
+    organizations:
+    - Tartan Solutions, Inc.
+    countries:
+    - US
+    organizationalUnits:
+    - IT Operations
+  commonName: ecorp.plaidcloud.io
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 4096
+    rotationPolicy: Always
+  usages:
+    - server auth
+    - key encipherment
+    - digital signature
+  dnsNames:
+  - ecorp.plaidcloud.io
+  - app.ecorp.plaidcloud.io
+  - superset.ecorp.plaidcloud.io
+  issuerRef:
+    name: plaidcloud-io
+    kind: ClusterIssuer
+    group: cert-manager.io

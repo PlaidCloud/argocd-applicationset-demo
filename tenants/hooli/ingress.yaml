@@ -9,11 +9,21 @@ spec:
   tls:
   - hosts:
     - hooli.plaidcloud.io
+    - app.hooli.plaidcloud.io
+    - superset.hooli.plaidcloud.io
+    secretName: ssl-cert
   rules:
   - host: hooli.plaidcloud.io
     http:
       paths:
       - backend:
-          serviceName: wordpress
+          serviceName: hooli-wordpress
           servicePort: 80
+        path: /
+  - host: superset.hooli.plaidcloud.io
+    http:
+      paths:
+      - backend:
+          serviceName: superset
+          servicePort: 9000
         path: /
