@@ -23,6 +23,6 @@ dependencies:
     version: 8.23.0
     repository: https://charts.bitnami.com/bitnami
     condition: rabbitmq.enabled
-  - name: jupyterhub
-    version: 1.2.0
-    repository: https://jupyterhub.github.io/helm-chart/
+  ##- name: jupyterhub
+  ##  version: 1.2.0
+  ##  repository: https://jupyterhub.github.io/helm-chart/
