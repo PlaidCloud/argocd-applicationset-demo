@@ -18,7 +18,7 @@ wordpress:
   ##
   wordpressBlogName: Hooli's Blog!
 
-  fullnameOverride: wordpress
+  ## fullnameOverride: wordpress
 
   service:
     type: ClusterIP
