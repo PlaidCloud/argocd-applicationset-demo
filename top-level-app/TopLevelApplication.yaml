@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tenant-appsets
+  name: io-tenant-appsets
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
   # Add a this finalizer ONLY if you want these to cascade delete.
@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
-    targetRevision: argocd-applicationsets
+    targetRevision: io-applicationsets
     path: applicationsets
   destination:
     server: https://kubernetes.default.svc
