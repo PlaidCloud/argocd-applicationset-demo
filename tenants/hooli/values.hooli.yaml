@@ -18,6 +18,8 @@ wordpress:
   ##
   wordpressBlogName: Hooli's Blog!
 
+  fullnameOverride: wordpress
+
   service:
     type: ClusterIP
     port: 80

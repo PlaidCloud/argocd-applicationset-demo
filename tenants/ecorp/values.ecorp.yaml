@@ -18,7 +18,7 @@ wordpress:
   ##
   wordpressBlogName: ECorp's Blog!
 
-  fullnameOverride: the-website
+  fullnameOverride: wordpress
 
   service:
     type: ClusterIP
