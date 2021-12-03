@@ -23,3 +23,6 @@ dependencies:
     version: 8.23.0
     repository: https://charts.bitnami.com/bitnami
     condition: rabbitmq.enabled
+  - name: pgadmin4
+    version: 1.8.2
+    repository: https://helm.runix.net
