@@ -7,13 +7,13 @@ metadata:
 spec:
   tls:
   - hosts:
-    - hooli.plaidcloud.io
-    - app.hooli.plaidcloud.io
-    - superset.hooli.plaidcloud.io
-    - sql.hooli.plaidcloud.io
+    - {{ .Release.Name }}.plaidcloud.io
+    - app.{{ .Release.Name }}.plaidcloud.io
+    - superset.{{ .Release.Name }}.plaidcloud.io
+    - sql.{{ .Release.Name }}.plaidcloud.io
     secretName: ssl-cert
   rules:
-  - host: hooli.plaidcloud.io
+  - host: {{ .Release.Name }}.plaidcloud.io
     http:
       paths:
       - pathType: Prefix
@@ -24,7 +24,7 @@ spec:
             port:
               number: 80
         
-  - host: superset.hooli.plaidcloud.io
+  - host: superset.{{ .Release.Name }}.plaidcloud.io
     http:
       paths:
       - pathType: Prefix
@@ -35,7 +35,7 @@ spec:
             port:
               number: 9000
 
-  - host: sql.hooli.plaidcloud.io
+  - host: sql.{{ .Release.Name }}.plaidcloud.io
     http:
       paths:
       - pathType: Prefix
@@ -46,7 +46,7 @@ spec:
             port:
               number: 80
 
-  - host: app.hooli.plaidcloud.io
+  - host: app.{{ .Release.Name }}.plaidcloud.io
     http:
       paths:
       - pathType: Prefix

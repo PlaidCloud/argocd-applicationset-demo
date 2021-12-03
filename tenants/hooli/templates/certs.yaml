@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: ssl-cert
-  namespace: pw-hooli
+  namespace: pw-{{ .Release.Name }}
 spec:
   secretName: ssl-cert
   duration: 2160h # 90d
@@ -14,7 +14,7 @@ spec:
     - US
     organizationalUnits:
     - IT Operations
-  commonName: hooli.plaidcloud.io
+  commonName: {{ .Release.Name }}.plaidcloud.io
   isCA: false
   privateKey:
     algorithm: RSA
@@ -26,10 +26,10 @@ spec:
     - key encipherment
     - digital signature
   dnsNames:
-  - hooli.plaidcloud.io
-  - app.hooli.plaidcloud.io
-  - superset.hooli.plaidcloud.io
-  - sql.hooli.plaidcloud.io
+  - {{ .Release.Name }}.plaidcloud.io
+  - app.{{ .Release.Name }}.plaidcloud.io
+  - superset.{{ .Release.Name }}.plaidcloud.io
+  - sql.{{ .Release.Name }}.plaidcloud.io
   issuerRef:
     name: plaidcloud-io
     kind: ClusterIssuer

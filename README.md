@@ -9,6 +9,8 @@ Argo CD Applications with [ApplicationSet Controller](https://argocd-application
 
 1. Kubernetes cluster with `argocd` namespace.
 2. Argo CD helm chart repo installed `helm repo add argo https://argoproj.github.io/argo-helm`
+3. `helm repo rm cloudposse-incubator 2>/dev/null`
+4. `helm repo add cloudposse-incubator https://charts.cloudposse.com/incubator/`
 3. Argo CD deployed in `argocd` namespace. Quick deploy: `helm upgrade --install argocd-demo argo/argo-cd -n argocd`
 
 ### Deploying An ApplicationSet for IO
@@ -28,7 +30,7 @@ This will need to be run for each ApplicationSet environment you want to operate
  - prod-tenants
 
 ```shell
-kubectl apply -f top-level-app/TopLevelApplication.yaml -n argocd
+kc apply -f top-level-app/TopLevelApplication.yaml -n argocd
 ```
 
 Eventually, all applications will get deployed and the Argo CD home page should look like this:
@@ -45,3 +47,6 @@ The ApplicationSet deploys two "tenant" apps which are actually Wordpress instal
 The ApplicationSet is deployed using the [Git Files Generator](https://argocd-applicationset.readthedocs.io/en/stable/Generators-Git/#git-generator-files).
 
 Please read the [accompanying blog](https://itnext.io/level-up-your-argo-cd-game-with-applicationset-ccd874977c4c) for further explanation.
+
+helm upgrade --install superset stable/superset -n pw-hooli
+helm install --name superset stable/superset -n pw-hooli
