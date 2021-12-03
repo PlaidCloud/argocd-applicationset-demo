@@ -47,3 +47,4 @@ streamlit:
 
 redis-commander:
   fullnameOverride: tenant-redis-commander
+  
