@@ -45,4 +45,15 @@ spec:
             name: tenant-pgadmin4
             port:
               number: 80
+
+  - host: app.hooli.plaidcloud.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: tenant-streamlit
+            port:
+              number: 8501
         
