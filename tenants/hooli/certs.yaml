@@ -29,6 +29,7 @@ spec:
   - hooli.plaidcloud.io
   - app.hooli.plaidcloud.io
   - superset.hooli.plaidcloud.io
+  - sql.hooli.plaidcloud.io
   issuerRef:
     name: plaidcloud-io
     kind: ClusterIssuer
