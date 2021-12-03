@@ -29,6 +29,4 @@ dependencies:
   - name: streamlit
     version: 0.3.0
     repository: https://samdobson.github.io/helm
-  - name: redis-commander
-    version: 0.1.2
-    repository: https://kfirfer.github.io/helm/
+  
