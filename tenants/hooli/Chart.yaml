@@ -15,10 +15,10 @@ dependencies:
     version: 10.2.6
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
-  - name: redis
-    version: 14.8.11
+  - name: redis-cluster
+    version: 7.0.13
     repository: https://charts.bitnami.com/bitnami
-    condition: redis.enabled
+    condition: redis-cluster.enabled
   - name: rabbitmq
     version: 8.23.0
     repository: https://charts.bitnami.com/bitnami
