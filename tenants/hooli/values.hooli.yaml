@@ -25,7 +25,8 @@ wordpress:
 
 redis-cluster:
   fullnameOverride: tenant-redis-cluster
-  replicaCount: 10
+  cluster:
+    nodes: 10
 
 rabbitmq:
   fullnameOverride: tenant-rabbitmq
@@ -39,3 +40,6 @@ postgresql:
 
 mariadb:
   fullnameOverride: tenant-mariadb
+
+pagadmin4:
+  fullnameOverride: tenant-pgadmin4
