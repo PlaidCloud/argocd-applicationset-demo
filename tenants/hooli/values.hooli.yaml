@@ -41,3 +41,9 @@ mariadb:
 
 pgadmin4:
   fullnameOverride: tenant-pgadmin4
+
+streamlit:
+  fullnameOverride: tenant-streamlit
+
+redis-commander:
+  fullnameOverride: tenant-redis-commander
