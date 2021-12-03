@@ -25,12 +25,17 @@ wordpress:
 
 redis-cluster:
   fullnameOverride: tenant-redis-cluster
+  replicaCount: 10
 
 rabbitmq:
   fullnameOverride: tenant-rabbitmq
+  replicaCount: 3
 
 superset:
   fullnameOverride: tenant-superset
 
-postresql:
+postgresql:
   fullnameOverride: tenant-postgresql
+
+mariadb:
+  fullnameOverride: tenant-mariadb
