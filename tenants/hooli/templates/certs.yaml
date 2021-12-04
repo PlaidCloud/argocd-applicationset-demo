@@ -28,8 +28,10 @@ spec:
   dnsNames:
   - {{ .Release.Name }}.plaidcloud.io
   - app.{{ .Release.Name }}.plaidcloud.io
-  - superset.{{ .Release.Name }}.plaidcloud.io
+  - dashboard.{{ .Release.Name }}.plaidcloud.io
   - sql.{{ .Release.Name }}.plaidcloud.io
+  - stomp.{{ .Release.Name }}.plaidcloud.io
+  - lab.{{ .Release.Name }}.plaidcloud.io
   issuerRef:
     name: plaidcloud-io
     kind: ClusterIssuer

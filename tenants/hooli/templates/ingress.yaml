@@ -9,8 +9,10 @@ spec:
   - hosts:
     - {{ .Release.Name }}.plaidcloud.io
     - app.{{ .Release.Name }}.plaidcloud.io
-    - superset.{{ .Release.Name }}.plaidcloud.io
+    - dashboard.{{ .Release.Name }}.plaidcloud.io
     - sql.{{ .Release.Name }}.plaidcloud.io
+    - stomp.{{ .Release.Name }}.plaidcloud.io
+    - lab.{{ .Release.Name }}.plaidcloud.io
     secretName: ssl-cert
   rules:
   - host: {{ .Release.Name }}.plaidcloud.io
@@ -45,6 +47,17 @@ spec:
             name: tenant-pgadmin4
             port:
               number: 80
+
+  - host: stomp.{{ .Release.Name }}.plaidcloud.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: tenant-rabbitmq
+            port:
+              number: 15674
 
   - host: app.{{ .Release.Name }}.plaidcloud.io
     http:
