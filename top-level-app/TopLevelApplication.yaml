@@ -11,8 +11,8 @@ spec:
   # The project the application belongs to.
   project: default
   source:
-    repoURL: https://github.com/plaidcloud/argocd-applicationset-demo.git
-    targetRevision: io-applicationsets
+    repoURL: https://github.com/plaidcloud/plaid-tenant-applicationsets.git
+    targetRevision: main
     path: applicationsets
   destination:
     server: https://kubernetes.default.svc
