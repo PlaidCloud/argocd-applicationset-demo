@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: ssl-cert
-  namespace: pw-ecorp
+  namespace: pw-{{ .Release.Name }}
 spec:
   secretName: ssl-cert
   duration: 2160h # 90d
@@ -14,7 +14,7 @@ spec:
     - US
     organizationalUnits:
     - IT Operations
-  commonName: ecorp.plaidcloud.io
+  commonName: {{ .Release.Name }}.plaidcloud.io
   isCA: false
   privateKey:
     algorithm: RSA
@@ -26,9 +26,12 @@ spec:
     - key encipherment
     - digital signature
   dnsNames:
-  - ecorp.plaidcloud.io
-  - app.ecorp.plaidcloud.io
-  - superset.ecorp.plaidcloud.io
+  - {{ .Release.Name }}.plaidcloud.io
+  - app.{{ .Release.Name }}.plaidcloud.io
+  - dashboard.{{ .Release.Name }}.plaidcloud.io
+  - sql.{{ .Release.Name }}.plaidcloud.io
+  - stomp.{{ .Release.Name }}.plaidcloud.io
+  - lab.{{ .Release.Name }}.plaidcloud.io
   issuerRef:
     name: plaidcloud-io
     kind: ClusterIssuer

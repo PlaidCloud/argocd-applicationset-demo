@@ -1,23 +1,26 @@
-## Override Wordpress for ECorp in this file
-wordpress:
-  wordpressUsername: phillip
-  ## Admin email
-  ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-  ##
-  wordpressEmail: phillip.price@ecorp.com
-  ## First name
-  ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-  ##
-  wordpressFirstName: Phillip
-  ## Last name
-  ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-  ##
-  wordpressLastName: Price
-  ## Blog name
-  ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
-  ##
-  wordpressBlogName: ECorp's Blog!
+## Override Wordpress for Hooli in this file
+redis-cluster:
+  fullnameOverride: tenant-redis-cluster
 
-  service:
-    type: ClusterIP
-    port: 80
+rabbitmq:
+  fullnameOverride: tenant-rabbitmq
+  replicaCount: 3
+
+superset:
+  fullnameOverride: tenant-superset
+
+postgresql:
+  fullnameOverride: tenant-postgresql
+
+mariadb:
+  fullnameOverride: tenant-mariadb
+
+pgadmin4:
+  fullnameOverride: tenant-pgadmin4
+
+streamlit:
+  fullnameOverride: tenant-streamlit
+
+redis-commander:
+  fullnameOverride: tenant-redis-commander
+  
